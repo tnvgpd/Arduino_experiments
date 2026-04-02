@@ -15,9 +15,17 @@ a {
     color: inherit;
 }
 
+h1, h2, h3 {
+    color: #1e3a8a; /* Elegant royal blue */
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
 /* --- Header / Navbar --- */
 header {
-    background: linear-gradient(90deg, #1a237e, #64b5f6); /* royal to pastel blue */
+    background: linear-gradient(90deg, #1e3a8a, #64b5f6);
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -25,31 +33,25 @@ header {
     color: white;
 }
 
-header h2 {
-    margin: 0;
-}
-
 header nav a {
     margin-left: 1.5rem;
     font-weight: 500;
-    color: white;
 }
 
 header nav a:hover {
-    color: #bbdefb;
+    color: #cfe3fc;
 }
 
 /* --- Hero Section --- */
 .hero {
     text-align: center;
     padding: 4rem 2rem;
-    background-color: #e3f2fd; /* very light blue */
+    background-color: #cfe3fc;
 }
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #1a237e; /* royal blue */
 }
 
 .hero p {
@@ -58,28 +60,29 @@ header nav a:hover {
     margin: 0 auto;
 }
 
-/* --- Cards (Homepage, Projects, Blog) --- */
+/* --- Cards (Projects / Blog) --- */
 .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
     padding: 2rem;
-    justify-items: center;
 }
 
 .card {
     background-color: white;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 300px;
     overflow: hidden;
-    width: 100%;
-    max-width: 320px;
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .card img {
@@ -90,59 +93,49 @@ header nav a:hover {
 
 .card-content {
     padding: 1rem;
+    flex-grow: 1;
 }
 
 .card-content h3 {
-    color: #1a237e;
     margin-bottom: 0.5rem;
 }
 
 .card-content p {
     font-size: 0.95rem;
-    color: #333;
     line-height: 1.4;
+    color: #333;
 }
 
-/* --- Featured Projects / Latest Blog Headings --- */
-.featured-projects h2,
-.latest-blog h2 {
-    color: #1a237e; /* royal blue */
-    text-align: center;
-    margin-top: 2rem;
+.card-content a {
+    margin-top: 0.8rem;
+    display: inline-block;
+    color: #1e3a8a;
+    font-weight: 500;
 }
 
-/* --- CTA Section --- */
-.cta {
-    background-color: #e3f2fd; /* pastel blue */
-    text-align: center;
-    padding: 2rem;
-    margin-top: 2rem;
-    border-radius: 12px;
+.card-content a:hover {
+    color: #3949ab;
 }
 
-.cta h2 {
-    color: #1a237e;
+/* --- Blog / Project Page --- */
+.blog-post, .project-post {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    line-height: 1.6;
+}
+
+.blog-post h2, .project-post h2 {
     margin-bottom: 1rem;
 }
 
-.cta button {
-    font-size: 1.1rem;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    background: #1a237e;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.cta button:hover {
-    background: #3949ab;
+.blog-post ul, .project-post ul {
+    margin-bottom: 1rem;
 }
 
 /* --- Footer --- */
 footer {
-    background-color: #1a237e;
+    background-color: #1e3a8a;
     color: white;
     text-align: center;
     padding: 1.5rem 2rem;
@@ -150,12 +143,11 @@ footer {
 }
 
 footer a {
-    color: #bbdefb;
+    color: #cfe3fc;
 }
 
-/* --- Buttons (Generic) --- */
 button {
-    background: #1a237e;
+    background: #1e3a8a;
     color: white;
     padding: 0.6rem 1.2rem;
     border: none;
@@ -168,55 +160,14 @@ button:hover {
     background: #3949ab;
 }
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 600px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-    .hero p {
-        font-size: 1rem;
-    }
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    header nav {
-        margin-top: 0.5rem;
-    }
-    header nav a {
-        margin-left: 0;
-        margin-right: 1rem;
-    }
-}
-
-/* --- Blog Post Page Styling --- */
-.blog-post {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    line-height: 1.6;
-    font-size: 1.05rem;
-    color: #1b1b2f;
-}
-
-.blog-post h1 {
-    color: #1a237e; /* royal blue for headings */
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.blog-post h3 {
-    color: #3949ab; /* slightly lighter royal blue */
+/* Back link button */
+.back-link {
+    display: inline-block;
     margin-top: 1.5rem;
-    margin-bottom: 0.8rem;
+    color: #1e3a8a;
+    font-weight: 500;
 }
 
-.blog-post p {
-    margin-bottom: 1rem;
-}
-
-.blog-post ul {
-    list-style: disc;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
+.back-link:hover {
+    color: #3949ab;
 }
